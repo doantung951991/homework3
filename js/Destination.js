@@ -1,14 +1,22 @@
+
 class Destination {
     name;
-    image;
+    images;
     datemodified;
-    constructor(){
-
+    constructor(name){
+        this.name=name;
+        this.images = [];
+        this.datemodified=new Date().toISOString();
     }
-    set NewImage(){
-
+    set NewImage(image){
+            this.images.push(image);
+            this.datemodified=new Date().toISOString();
     }
-    get inFo(){
-
+    get info(){
+        return(`chào mừng bạn đến với : ${this.name}
+                   Review địa điểm : ${this.images}
+        Cập nhật lúc: ${this.datemodified}
+        `);
     }
 }
+export{Destination};
